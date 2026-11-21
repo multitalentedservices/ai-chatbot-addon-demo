@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pearl &amp; Vale Dental Studio (Demo) — with the FAQ Chatbot Add-On</title>
+<meta name="description" content="Demo showcase: a fictional dental studio page carrying the rule-based FAQ chatbot add-on — FAQ answers generated from the business's own data, in-chat callback capture, and a local lead log. Demo data only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>document.documentElement.classList.add("js");</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo-strip"><strong>DEMO</strong> — Pearl &amp; Vale Dental Studio is a fictional business. Every price, hour and detail on this page is demo data, here to show the chatbot add-on working.</div>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">Pearl <span>&amp;</span> Vale<small>Dental Studio · Gulberg, Lahore</small></a>
+    <nav class="main" aria-label="Main">
+      <a href="index.html" aria-current="page">The studio</a>
+      <a href="index.html#addon">The chatbot add-on</a>
+      <a href="leads.html">Leads log (demo)</a>
+    </nav>
+    <a class="head-call" href="tel:+924235770142">Call 042 3577 0142</a>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ============ THE HOST BUSINESS (kept deliberately quiet) ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Fictional host business · the page underneath the add-on</p>
+        <h1>Gentle, honest dentistry in Gulberg.</h1>
+        <p class="lede">Pearl &amp; Vale is the sample business on this demo page. Its services, prices and hours below are the <b>only</b> facts the chat widget in the corner can talk about — try to catch it out.</p>
+        <p><a class="btn" href="#services">See treatments &amp; prices</a> <a class="btn ghost" href="#addon">How the add-on works</a></p>
+        <div class="facts">
+          <div class="fact"><b>Today (demo clock)</b><span>Sunday — closed. Demo clock: Sunday 22 November 2026, 11:00 AM PKT.</span></div>
+          <div class="fact"><b>Find us</b><span data-biz="address">14-B Main Boulevard, Gulberg III, Lahore</span></div>
+          <div class="fact"><b>This month</b><span>Free consultation included with every Cleaning &amp; Polishing (demo offer).</span></div>
+        </div>
+      </div>
+      <div class="hero-img"><img src="assets/hero.jpg" alt="The calm, neutral reception and treatment area of the fictional Pearl and Vale Dental Studio" width="1400" height="933"></div>
+    </div>
+  </section>
+
+  <section class="block" id="services">
+    <div class="wrap">
+      <h2>Treatments &amp; prices</h2>
+      <p class="note">This list is rendered from the same business-data object the chatbot answers from — change a price here and the bot's answer changes with it. That is the whole point of the add-on.</p>
+      <div class="cards" data-services></div>
+      <noscript><p class="note">The treatment list is rendered by JavaScript from the demo data object. Prices: Consultation &amp; Check-up PKR 1,500 · Cleaning &amp; Polishing PKR 4,500 · Teeth Whitening PKR 18,000 · Root Canal Treatment PKR 25,000 · Braces Consultation PKR 3,000 · Dental Implant (single) PKR 85,000.</p></noscript>
+    </div>
+  </section>
+
+  <section class="block band">
+    <div class="wrap split">
+      <div>
+        <h2>Opening hours</h2>
+        <table class="hours" data-hours aria-label="Opening hours"></table>
+        <noscript><p class="note">Monday–Friday 9:00 AM – 8:00 PM · Saturday 10:00 AM – 6:00 PM · Sunday closed.</p></noscript>
+      </div>
+      <div>
+        <h2>Visit &amp; contact</h2>
+        <div class="panel">
+          <p><b>Address:</b> <span data-biz="address">14-B Main Boulevard, Gulberg III, Lahore</span></p>
+          <p><b>Parking:</b> <span data-biz="parking">Free patient parking behind the studio, off Service Lane 4 — tell the guard you are visiting Pearl &amp; Vale.</span></p>
+          <p><b>Phone:</b> <a href="tel:+924235770142">042 3577 0142</a> · <b>WhatsApp:</b> 0321 555 0142</p>
+          <p><b>Email:</b> care@pearlandvale.example</p>
+          <p><b>Payments:</b> Cash, debit and credit cards, JazzCash and EasyPaisa.</p>
+          <p><b>Cancellations:</b> Free cancellation or rescheduling up to 4 hours before your appointment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE ADD-ON SHOWCASE (the product) ============ -->
+  <section class="block" id="addon">
+    <div class="wrap">
+      <p class="eyebrow">The product on this page · Portfolio Queue #12</p>
+      <h2>The FAQ Chatbot Add-On, live on this page</h2>
+      <p class="lede">The violet chat widget in the bottom-right corner is the add-on being sold. On this demo it runs as an honest, rule-based FAQ bot. <b>Demo: rule-based FAQ bot — a production add-on connects to an AI model + the business's own data.</b> Nothing you type leaves your browser.</p>
+      <div class="try-band">
+        <h2>Try to catch it out</h2>
+        <p>Ask it the opening hours, a price, or where to park — it answers from Pearl &amp; Vale's own data. Then ask it something off-scope, like the weather or a rival clinic: it will say plainly that it can't help with that, and offer a person instead. That honesty is a feature, not a limitation.</p>
+        <p><button type="button" class="btn" data-open-chat>Open the chat widget</button></p>
+      </div>
+      <div class="steps">
+        <div class="step"><p class="num">1</p><h3>We load the business's facts</h3><p>Services, prices, hours, address, policies — one data object, agreed with the business. The bot can only say what that object says.</p></div>
+        <div class="step"><p class="num">2</p><h3>The widget answers &amp; captures</h3><p>Visitors tap quick-reply chips or type. Known questions get instant answers; a two-question callback flow captures name and a validated Pakistani mobile number.</p></div>
+        <div class="step"><p class="num">3</p><h3>Leads land in the sheet</h3><p>Every callback request and WhatsApp hand-off is written to the business's lead sheet with a reference. <a href="leads.html">See this demo's log</a> — it fills up as you use the chat.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block band">
+    <div class="wrap split">
+      <div class="panel accent">
+        <h3>What this demo bot can and cannot do — stated plainly</h3>
+        <ul class="ticks">
+          <li>Answers 13 FAQ topics: hours, location, prices, individual treatments, services, booking, parking, contact, offers, payments, cancellation, human help, greetings.</li>
+          <li>Matches exact phrases, keyword variants and partial questions; when two topics match, the higher score wins and ties resolve by a fixed priority (human help first).</li>
+          <li>Captures callback leads in-chat with phone validation and a reference number.</li>
+          <li>Anything outside the FAQ scope gets an honest refusal plus a human hand-off — never an invented answer.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>What it is not</h3>
+        <ul class="ticks">
+          <li>It is <b>not</b> an AI in this demo: no model reads your words, and it does not understand free text beyond its keyword matching.</li>
+          <li>It cannot check live appointment availability, take payments, or give medical advice.</li>
+          <li>The production add-on connects the same widget to an AI model plus the business's own data and booking system — the scope grows, the honesty rules stay.</li>
+          <li>Lead capture here is a local stub in your browser. Production wiring writes to the business's Google Sheet instead — same columns, same references.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <h2>Add-on scope tiers</h2>
+      <p class="note">Demo scope description — add-on pricing follows Pricing v3; no figures are quoted on this demo page.</p>
+      <div class="tiers">
+        <div class="tier"><p class="scope">FAQ</p><p>The widget on an existing website, loaded with the business's agreed facts: services, prices, hours, policies. Quick-reply chips, honest fallback, WhatsApp hand-off.</p></div>
+        <div class="tier mid"><p class="scope">FAQ + Leads</p><p>Everything in FAQ, plus the in-chat callback flow with validated phone capture, references, and leads written to the business's Google Sheet.</p></div>
+        <div class="tier"><p class="scope">FAQ + Leads + Booking hand-off</p><p>Everything in FAQ + Leads, plus a guided hand-off into the business's booking flow, so a chat that starts as a question can end as an appointment.</p></div>
+      </div>
+      <p style="margin-top:22px"><a class="btn ghost" href="leads.html">See the leads this demo has captured</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Pearl &amp; Vale Dental Studio (demo)</b><p>A fictional business, invented for this add-on showcase. No real patients, bookings or enquiries exist here.</p></div>
+    <div><b>Visit</b><p>14-B Main Boulevard, Gulberg III, Lahore<br>Mon–Fri 9 AM – 8 PM · Sat 10 AM – 6 PM · Sun closed</p></div>
+    <div><b>About this demo</b><p>AI Chatbot Add-On demo — Portfolio Queue #12. Client-facing owner: BalanceBit Solutions · Production: MTS. Demo data only.</p></div>
+  </div>
+</footer>
+
+<button class="chat-launcher" type="button" data-chat-launcher aria-haspopup="dialog"><span class="dot" aria-hidden="true"></span>Chat — FAQ demo</button>
+<section class="chat-panel" data-chat-panel role="dialog" aria-label="Pearl and Vale FAQ chat, demo" hidden>
+  <div class="chat-head">
+    <div class="who"><b>Pearl &amp; Vale Dental Studio</b><span>FAQ demo bot · Demo: rule-based FAQ bot — a production add-on connects to an AI model + the business's own data</span></div>
+    <button type="button" data-chat-close aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-msgs" data-chat-msgs aria-live="polite"></div>
+  <div class="chat-chips" data-chat-chips></div>
+  <div class="chat-actions">
+    <a class="wa-btn" data-chat-wa href="https://wa.me/923215550142" target="_blank" rel="noopener">WhatsApp a person</a>
+    <button type="button" class="clear-btn" data-chat-clear>Clear chat</button>
+  </div>
+  <form class="chat-form" data-chat-form>
+    <label for="chat-input">Type your question</label>
+    <input id="chat-input" data-chat-input type="text" autocomplete="off" placeholder="Ask about prices, hours…">
+    <button type="submit">Send</button>
+  </form>
+</section>
+<noscript><p class="note" style="padding:12px 20px">The chat widget needs JavaScript to run. The studio's services, prices, hours and contact details on this page are complete without it.</p></noscript>
+<script src="js/logic.js"></script>
+<script src="js/app.js"></script>
+<script>
+  document.querySelector('[data-open-chat]').addEventListener('click', function () {
+    document.querySelector('[data-chat-launcher]').click();
+  });
+</script>
+</body>
+</html>

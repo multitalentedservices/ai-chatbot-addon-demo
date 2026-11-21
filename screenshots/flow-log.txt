@@ -1,0 +1,21 @@
+panel visible after launcher click -> true
+greeting contains honesty label -> true
+focus after open is the input -> true
+chip "Opening hours" answer has Mon 9:00 AM + Sunday Closed -> true
+exact FAQ answer == data (PKR 18,000, 60 mins) -> true
+keyword-variant answer == data (Cleaning & Polishing PKR 4,500) -> true
+off-scope fallback CONTENT -> I can only answer about Pearl & Vale’s services, hours and bookings in this demo — that question is outside my FAQ scope. Try one of the suggestions below, tap “Request a callback”, or messa
+fallback names scope + WhatsApp -> true
+FIRING whatsapp hand-off log -> [{"ref":"HO-DEMO-9343","channel":"WhatsApp hand-off","page":"index.html","when":"Sunday 22 November 2026 · 11:00 AM PKT (fixed demo clock)"}]
+callback flow asks name -> true
+callback flow asks phone -> true
+bad phone bot error CONTENT -> That doesn’t look like a valid Pakistani mobile number — it must start with 03 and have 11 digits in total (for example 0321 555 0142). Please check it and type it again.
+error names the constraint (03 + 11 digits) -> true
+callback confirmation CONTENT -> Thank you, Ahmed — your callback request is saved with reference CB-DEMO-9717. Pearl & Vale will call +923215550142 during opening hours. (Demo: this request was written to a local log in your browser only — nothing was sent anywhere.)Demo 
+callback ref -> CB-DEMO-9717
+FIRING stored leads -> ["CB-DEMO-9717:Ahmed Raza:+923215550142"]
+conversation persists across reload (ref still in chat) -> true
+CROSS-SURFACE leads view contains ref + name + normalised phone -> true
+CROSS-SURFACE hand-off row visible -> true
+log summary -> Local sheet-log in this browser: 1 callback lead(s) · 1 WhatsApp hand-off click(s). Production wiring replaces this stub with the business’s Google Sheet — same columns, same references.
+clear chat -> rendered msgs 1 (fresh greeting), stored 1, leads preserved 1

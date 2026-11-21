@@ -1,0 +1,38 @@
+{
+  "index@phone": {
+    "overflowX": 0,
+    "badEls": [],
+    "brokenImgs": [],
+    "textBad": []
+  },
+  "index@tablet": {
+    "overflowX": 0,
+    "badEls": [],
+    "brokenImgs": [],
+    "textBad": []
+  },
+  "index@desktop": {
+    "overflowX": 0,
+    "badEls": [],
+    "brokenImgs": [],
+    "textBad": []
+  },
+  "leads@phone": {
+    "overflowX": 0,
+    "badEls": [],
+    "brokenImgs": [],
+    "textBad": []
+  },
+  "leads@tablet": {
+    "overflowX": 0,
+    "badEls": [],
+    "brokenImgs": [],
+    "textBad": []
+  },
+  "leads@desktop": {
+    "overflowX": 0,
+    "badEls": [],
+    "brokenImgs": [],
+    "textBad": []
+  }
+}

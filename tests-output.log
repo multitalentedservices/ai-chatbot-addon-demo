@@ -1,0 +1,125 @@
+PASS  matcher "What are your opening hours?" -> hours
+PASS  matcher "when do you open on saturday" -> hours
+PASS  matcher "What are your timings?" -> hours
+PASS  matcher "Are you open on Sunday?" -> hours
+PASS  matcher "Where are you located?" -> location
+PASS  matcher "what is your address" -> location
+PASS  matcher "What are your prices?" -> prices
+PASS  matcher "How much is teeth whitening?" -> prices
+PASS  matcher "how much does a root canal cost" -> prices
+PASS  matcher "cleaning charges please" -> prices
+PASS  matcher "I want to book an appointment" -> booking
+PASS  matcher "can I schedule an appointment for friday" -> booking
+PASS  matcher "Is there parking?" -> parking
+PASS  matcher "where can I park my car" -> parking
+PASS  matcher "What is your contact number?" -> contact
+PASS  matcher "how can I contact you on whatsapp" -> contact
+PASS  matcher "Any offers this month?" -> offers
+PASS  matcher "do you have any discounts" -> offers
+PASS  matcher "What payment methods do you accept?" -> payment
+PASS  matcher "can I pay by jazzcash" -> payment
+PASS  matcher "How do I cancel my appointment?" -> cancellation
+PASS  matcher "I need to reschedule my appointment" -> cancellation
+PASS  matcher "Can I talk to a person?" -> human
+PASS  matcher "I want to speak to a human agent" -> human
+PASS  matcher "What services do you offer?" -> services
+PASS  matcher "what treatments do you have" -> services
+PASS  matcher "Hello" -> greeting
+PASS  matcher "Assalam o alaikum" -> greeting
+PASS  matcher "Thank you so much" -> thanks
+PASS  matcher "shukria" -> thanks
+PASS  off-scope fallback: "What is the weather in Lahore toda"
+PASS  off-scope fallback: "Do you sell pizzas?"
+PASS  off-scope fallback: "Tell me a joke"
+PASS  off-scope fallback: "What is the capital of France?"
+PASS  off-scope fallback: "I have severe tooth pain, is it an"
+PASS  empty message -> no intent
+PASS  whitespace message -> no intent
+PASS  very long message still matches hours
+PASS  dual-intent tie resolves by priority -> human
+PASS  dual-intent higher score wins -> booking
+PASS  hours answer contains Monday line
+PASS  hours answer contains Tuesday line
+PASS  hours answer contains Wednesday line
+PASS  hours answer contains Thursday line
+PASS  hours answer contains Friday line
+PASS  hours answer contains Saturday line
+PASS  hours answer contains Sunday line
+PASS  hours answer names the business
+PASS  price answer contains Consultation & Check-up at data price
+PASS  price answer contains Cleaning & Polishing at data price
+PASS  price answer contains Teeth Whitening at data price
+PASS  price answer contains Root Canal Treatment at data price
+PASS  price answer contains Braces Consultation at data price
+PASS  price answer contains Dental Implant (single) at data price
+PASS  single-service answer == data (price + mins)
+PASS  location answer == data address + parking
+PASS  contact answer == data phone/whatsapp/email
+PASS  offers answer == data offer verbatim
+PASS  cancellation answer == data verbatim
+PASS  payment answer lists Cash
+PASS  payment answer lists Debit and credit cards
+PASS  payment answer lists JazzCash
+PASS  payment answer lists EasyPaisa
+PASS  fallback names scope + business
+PASS  fallback offers WhatsApp hand-off number
+PASS  DEMO label text exact
+PASS  phone 0321 555 0142 valid + normalised
+PASS  phone +923215550142 valid
+PASS  phone 923215550142 valid
+PASS  phone 0321-5550142 valid (dashes stripped)
+PASS  phone invalid: "123" + error names the 03/11-digit rule
+PASS  phone invalid: "0321 555 014" + error names the 03/11-digit rule
+PASS  phone invalid: "042 3577 0142" + error names the 03/11-digit rule
+PASS  phone invalid: "12345678901" + error names the 03/11-digit rule
+PASS  phone invalid: "" + error names the 03/11-digit rule
+PASS  phone invalid: "abcd" + error names the 03/11-digit rule
+PASS  name valid
+PASS  name too short rejected
+PASS  name without letters rejected
+PASS  ref format CB-DEMO-####
+PASS  ref deterministic (same seed, same ref)
+PASS  ref differs for different lead
+PASS  addLead appends one lead with ref + status
+PASS  addLead does not mutate input array
+PASS  addLead second lead keeps first
+PASS  confirmation text carries ref + phone + local-only honesty
+PASS  addHandoff records WhatsApp channel + ref format
+PASS  chat persistence round-trip
+PASS  leads persistence round-trip
+PASS  clear-chat state shape (empty messages)
+PASS  contrast ink on paper = 14.80 >= 4.5
+PASS  contrast ink on card = 15.47 >= 4.5
+PASS  contrast muted on paper = 6.87 >= 4.5
+PASS  contrast muted on card = 7.18 >= 4.5
+PASS  contrast accent-dark on paper (links) = 9.14 >= 4.5
+PASS  contrast accent-dark on card = 9.55 >= 4.5
+PASS  contrast white on accent (buttons/bubbles/launcher) = 7.10 >= 4.5
+PASS  contrast white on accent-dark (hover) = 9.55 >= 4.5
+PASS  contrast ink on accent-soft (bot bubbles) = 13.05 >= 4.5
+PASS  contrast head sub-label on accent = 5.35 >= 4.5
+PASS  contrast error on paper = 6.25 >= 4.5
+PASS  contrast footer text on ink = 10.74 >= 4.5
+PASS  contrast footer link on ink = 8.92 >= 4.5
+PASS  contrast demo-strip white on ink = 15.47 >= 4.5
+PASS  contrast focus ring accent on paper (>=3) = 6.80 >= 3
+PASS  index.html carries DEMO labelling
+PASS  index.html carries the chat widget (launcher + panel + aria-live)
+PASS  index.html has unique title
+PASS  leads.html carries DEMO labelling
+PASS  leads.html carries the chat widget (launcher + panel + aria-live)
+PASS  leads.html has unique title
+PASS  titles differ across pages
+PASS  zero live endpoints: no fetch/XHR/beacon/analytics in JS
+PASS  only external refs are Google Fonts + wa.me hand-off
+PASS  no lorem ipsum anywhere
+PASS  no claim of real AI ("AI model" only inside the honesty label)
+PASS  local refs all resolve
+PASS  sitemap + robots present
+PASS  code weight 50801 B < 400 KB
+PASS  assets/hero.jpg = 117551 B <= 120 KB
+PASS  assets/treatment.jpg = 114863 B <= 120 KB
+PASS  media total 232414 B <= 1.6 MB
+code total: 50801 B · media total: 232414 B
+---
+TOTAL: 122 PASS / 0 FAIL

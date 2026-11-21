@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leads Log (Demo) — FAQ Chatbot Add-On · Pearl &amp; Vale</title>
+<meta name="description" content="Demo leads view for the FAQ chatbot add-on: callback leads and WhatsApp hand-off clicks captured by the chat widget, rendered from the local sheet-log stub. Demo data only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>document.documentElement.classList.add("js");</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo-strip"><strong>DEMO</strong> — This log lives only in your browser. In production, the same rows are written to the business's Google Sheet.</div>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">Pearl <span>&amp;</span> Vale<small>Dental Studio · Gulberg, Lahore</small></a>
+    <nav class="main" aria-label="Main">
+      <a href="index.html">The studio</a>
+      <a href="index.html#addon">The chatbot add-on</a>
+      <a href="leads.html" aria-current="page">Leads log (demo)</a>
+    </nav>
+    <a class="head-call" href="tel:+924235770142">Call 042 3577 0142</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="block">
+    <div class="wrap">
+      <p class="eyebrow">The wiring, made visible</p>
+      <h1 style="font-size:clamp(28px,4vw,40px)">Leads captured by the chat widget</h1>
+      <p class="lede">This page reads the same local sheet-log the chat widget writes to. Use the chat on the home page — request a callback, or tap the WhatsApp hand-off — then return here: your rows appear with their references. That round-trip is the add-on's lead wiring, proven end to end.</p>
+      <p class="note" data-log-summary>Local sheet-log in this browser: loading…</p>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:6px">
+    <div class="wrap">
+      <h2>Callback leads</h2>
+      <div data-leads></div>
+      <noscript><p class="note">The leads log needs JavaScript — it renders rows stored in your browser by the chat widget.</p></noscript>
+    </div>
+  </section>
+
+  <section class="block band">
+    <div class="wrap">
+      <h2>WhatsApp hand-off clicks</h2>
+      <p class="note">When a visitor decides the bot has reached its limit, the hand-off matters. Each click on "WhatsApp a person" inside the chat is recorded here before the chat opens.</p>
+      <div data-handoffs></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap split">
+      <div>
+        <h2>The studio behind the log</h2>
+        <div class="hero-img"><img src="assets/treatment.jpg" alt="A calm treatment room at the fictional Pearl and Vale Dental Studio" width="1400" height="933" loading="lazy"></div>
+      </div>
+      <div class="panel">
+        <h3>How to test this page</h3>
+        <ul class="ticks">
+          <li>Go to <a href="index.html">the studio page</a> and open the violet chat widget.</li>
+          <li>Tap "Request a callback", give a name, then try a wrong phone number first — the bot names the rule and asks again.</li>
+          <li>Enter a valid Pakistani mobile (03… , 11 digits). The bot confirms with a CB-DEMO reference.</li>
+          <li>Come back here: the lead is in the table above, with the same reference.</li>
+          <li>Reload both pages — the conversation and the log persist in your browser until you tap "Clear chat".</li>
+        </ul>
+        <p style="margin-top:14px"><a class="btn" href="index.html#addon">Back to the add-on showcase</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Pearl &amp; Vale Dental Studio (demo)</b><p>A fictional business, invented for this add-on showcase. No real patients, bookings or enquiries exist here.</p></div>
+    <div><b>Visit</b><p>14-B Main Boulevard, Gulberg III, Lahore<br>Mon–Fri 9 AM – 8 PM · Sat 10 AM – 6 PM · Sun closed</p></div>
+    <div><b>About this demo</b><p>AI Chatbot Add-On demo — Portfolio Queue #12. Client-facing owner: BalanceBit Solutions · Production: MTS. Demo data only.</p></div>
+  </div>
+</footer>
+
+<button class="chat-launcher" type="button" data-chat-launcher aria-haspopup="dialog"><span class="dot" aria-hidden="true"></span>Chat — FAQ demo</button>
+<section class="chat-panel" data-chat-panel role="dialog" aria-label="Pearl and Vale FAQ chat, demo" hidden>
+  <div class="chat-head">
+    <div class="who"><b>Pearl &amp; Vale Dental Studio</b><span>FAQ demo bot · Demo: rule-based FAQ bot — a production add-on connects to an AI model + the business's own data</span></div>
+    <button type="button" data-chat-close aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-msgs" data-chat-msgs aria-live="polite"></div>
+  <div class="chat-chips" data-chat-chips></div>
+  <div class="chat-actions">
+    <a class="wa-btn" data-chat-wa href="https://wa.me/923215550142" target="_blank" rel="noopener">WhatsApp a person</a>
+    <button type="button" class="clear-btn" data-chat-clear>Clear chat</button>
+  </div>
+  <form class="chat-form" data-chat-form>
+    <label for="chat-input">Type your question</label>
+    <input id="chat-input" data-chat-input type="text" autocomplete="off" placeholder="Ask about prices, hours…">
+    <button type="submit">Send</button>
+  </form>
+</section>
+<noscript><p class="note" style="padding:12px 20px">The chat widget needs JavaScript to run. This log is empty without it; the studio's details on the home page are complete without JavaScript.</p></noscript>
+<script src="js/logic.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

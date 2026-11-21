@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+# Demo build — fictional business, demo data only.
