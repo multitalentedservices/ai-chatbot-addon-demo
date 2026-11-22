@@ -10,14 +10,27 @@ Method: Playwright Tab/Shift+Tab/Enter/Escape at 1280px on index.html; focused e
 | index page | 4 | a — The chatbot add-on |  | 3px solid rgb(109, 40, 217) |
 | index page | 5 | a — Leads log (demo) |  | 3px solid rgb(109, 40, 217) |
 | index page | 6 | a — Call 042 3577 0142 | head-call | 3px solid rgb(109, 40, 217) |
-| index page | 7 | a — See treatments & prices | btn | 3px solid rgb(109, 40, 217) |
-| index page | 8 | a — How the add-on works | btn ghost | 3px solid rgb(109, 40, 217) |
-| index page | 9 | a — 042 3577 0142 |  | 3px solid rgb(109, 40, 217) |
-| index page | 10 | button — Open the chat widget | btn | 3px solid rgb(109, 40, 217) |
-| index page | 11 | a — See this demo's log |  | 3px solid rgb(109, 40, 217) |
-| index page | 12 | a — See the leads this demo has captured | btn ghost | 3px solid rgb(109, 40, 217) |
-| index page | 13 | button — Chat — FAQ demo | chat-launcher | 3px solid rgb(109, 40, 217) |
-| index page | — | LAUNCHER reached at Tab stop 13 | data-chat-launcher | — |
+| index page | 7 | a — watch them land in this demo's log |  | 3px solid rgb(109, 40, 217) |
+| index page | 8 | a — How the add-on works | btn | 3px solid rgb(109, 40, 217) |
+| index page | 9 | a — See the leads log (demo) | btn ghost | 3px solid rgb(109, 40, 217) |
+| index page | 10 | button — Opening hours | chip | 3px solid rgb(109, 40, 217) |
+| index page | 11 | button — Prices | chip | 3px solid rgb(109, 40, 217) |
+| index page | 12 | button — Book an appointment | chip | 3px solid rgb(109, 40, 217) |
+| index page | 13 | button — Where are you? | chip | 3px solid rgb(109, 40, 217) |
+| index page | 14 | button — Request a callback | chip | 3px solid rgb(109, 40, 217) |
+| index page | 15 | button — Talk to a person | chip | 3px solid rgb(109, 40, 217) |
+| index page | 16 | a — WhatsApp a person | wa-btn | 3px solid rgb(109, 40, 217) |
+| index page | 17 | button — Replay the demo | clear-btn | 3px solid rgb(109, 40, 217) |
+| index page | 18 | input — demo-chat-input | demo-chat-input | 3px solid rgb(109, 40, 217) |
+| index page | 19 | button — Send |  | 3px solid rgb(109, 40, 217) |
+| index page | 20 | a — See treatments & prices | btn | 3px solid rgb(109, 40, 217) |
+| index page | 21 | a — How the add-on works | btn ghost | 3px solid rgb(109, 40, 217) |
+| index page | 22 | a — 042 3577 0142 |  | 3px solid rgb(109, 40, 217) |
+| index page | 23 | button — Open the chat widget | btn | 3px solid rgb(109, 40, 217) |
+| index page | 24 | a — See this demo's log |  | 3px solid rgb(109, 40, 217) |
+| index page | 25 | a — See the leads this demo has captured | btn ghost | 3px solid rgb(109, 40, 217) |
+| index page | 26 | button — Chat — FAQ demo | chat-launcher | 3px solid rgb(109, 40, 217) |
+| index page | — | LAUNCHER reached at Tab stop 26 | data-chat-launcher | — |
 | widget OPEN (after Enter) | 0 | input — chat-input | chat-input | 3px solid rgb(109, 40, 217) |
 | widget open, Tab | 1 | button — Send |  | 3px solid rgb(109, 40, 217) |
 | widget open, Tab | 2 | body — Skip to content DEMO — Pearl & Vale Dental S |  | 0px none rgb(38, 35, 43) |

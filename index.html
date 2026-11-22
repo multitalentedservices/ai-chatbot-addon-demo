@@ -5,12 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pearl &amp; Vale Dental Studio (Demo) — with the FAQ Chatbot Add-On</title>
 <meta name="description" content="Demo showcase: a fictional dental studio page carrying the rule-based FAQ chatbot add-on — FAQ answers generated from the business's own data, in-chat callback capture, and a local lead log. Demo data only.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script>document.documentElement.classList.add("js");</script>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="assets/vendor/lenis.css">
+<script defer src="assets/vendor/lenis.min.js"></script>
+<script defer src="assets/vendor/gsap.min.js"></script>
+<script defer src="assets/vendor/ScrollTrigger.min.js"></script>
+<script defer src="js/hero-demo.js"></script>
+<script defer src="js/premium.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -28,12 +34,60 @@
 </header>
 
 <main id="main">
+  <!-- ============ THE PRODUCT HERO: the live demo conversation IS the hero module ============ -->
+  <section class="phero">
+    <div class="wrap phero-grid">
+      <div class="phero-copy">
+        <p class="eyebrow">The product · Portfolio Queue #12 · Demo</p>
+        <h1 class="phero-h">The FAQ Chatbot Add-On, <em>live on this page.</em></h1>
+        <p class="lede">Not a screenshot and not a mock-up: the conversation beside this text is the add-on itself, running on the studio's own data object. Steer it with the suggestion chips or type your own question — then try to catch it out.</p>
+        <div class="stat-row">
+          <div class="stat"><span class="stat-num" data-stat-num="13">13</span><span class="stat-label">FAQ topics the demo bot answers — hours, prices, booking, parking &amp; more</span></div>
+          <div class="stat"><span class="stat-num" data-stat-num="6">6</span><span class="stat-label">treatments priced in the studio's own data object, rendered below</span></div>
+          <div class="stat"><span class="stat-num" data-stat-num="2">2</span><span class="stat-label">questions in the in-chat callback flow — name, then a validated mobile number</span></div>
+          <div class="stat"><span class="stat-num" data-stat-num="3">3</span><span class="stat-label">add-on scope tiers, from FAQ-only to booking hand-off</span></div>
+        </div>
+        <ul class="phero-points">
+          <li><b>One data object.</b> Services, prices, hours, address, policies — the bot can only say what that object says, and the page below renders from the same object.</li>
+          <li><b>Honest fallback.</b> Anything outside the FAQ scope gets a plain refusal plus a human hand-off — never an invented answer.</li>
+          <li><b>Leads, not dead ends.</b> Callback requests and WhatsApp hand-offs are written to the business's lead sheet with a reference — <a href="leads.html">watch them land in this demo's log</a>.</li>
+        </ul>
+        <p style="margin-top:22px"><a class="btn" href="#addon">How the add-on works</a> <a class="btn ghost" href="leads.html">See the leads log (demo)</a></p>
+      </div>
+      <div class="demo-shell" id="demo">
+        <span class="demo-tag">Live demo · steer it yourself</span>
+        <div class="demo-panel" data-demo-panel>
+          <div class="chat-head">
+            <div class="who"><b>Pearl &amp; Vale Dental Studio</b><span>FAQ demo bot · Demo: rule-based FAQ bot — a production add-on connects to an AI model + the business's own data</span></div>
+          </div>
+          <div class="chat-msgs" data-demo-msgs aria-live="polite">
+            <div class="msg bot">Hello — I’m the Pearl &amp; Vale FAQ assistant. Demo: rule-based FAQ bot — a production add-on connects to an AI model + the business’s own data. Ask me about services, prices, hours or bookings, or tap a suggestion below.</div>
+            <div class="msg user">What are your opening hours?</div>
+            <div class="msg bot">Our opening hours at Pearl &amp; Vale Dental Studio are:
+Monday: 9:00 AM – 8:00 PM
+Tuesday: 9:00 AM – 8:00 PM
+Wednesday: 9:00 AM – 8:00 PM
+Thursday: 9:00 AM – 8:00 PM
+Friday: 9:00 AM – 8:00 PM
+Saturday: 10:00 AM – 6:00 PM
+Sunday: Closed
+Today (Sunday 22 November 2026) we are closed — the studio is closed on Sundays.</div>
+            <div class="msg user">How much is teeth whitening?</div>
+            <div class="msg bot">Teeth Whitening costs PKR 18,000 and takes about 60 minutes at Pearl &amp; Vale. Would you like to book it, or see the full price list?</div>
+          </div>
+          <p class="demo-static-note" data-demo-static-note>This is a printed transcript of the demo conversation, shown because JavaScript is off. With JavaScript on, this panel is the live add-on itself — same answers, generated from the same data object, plus the working callback flow that writes to <a href="leads.html">the demo leads log</a>.</p>
+        </div>
+        <p class="note" style="margin-top:12px">Demo: rule-based FAQ bot — a production add-on connects to an AI model + the business's own data. Nothing you type leaves your browser; a callback completed in this panel lands in the same demo leads log as the corner widget.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ THE HOST BUSINESS (kept deliberately quiet) ============ -->
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
         <p class="eyebrow">Fictional host business · the page underneath the add-on</p>
-        <h1>Gentle, honest dentistry in Gulberg.</h1>
+        <h2 class="host-h">Gentle, honest dentistry in Gulberg.</h2>
         <p class="lede">Pearl &amp; Vale is the sample business on this demo page. Its services, prices and hours below are the <b>only</b> facts the chat widget in the corner can talk about — try to catch it out.</p>
         <p><a class="btn" href="#services">See treatments &amp; prices</a> <a class="btn ghost" href="#addon">How the add-on works</a></p>
         <div class="facts">

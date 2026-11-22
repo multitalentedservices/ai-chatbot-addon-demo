@@ -12,7 +12,7 @@
 html{overflow-x:clip}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55}
 img{max-width:100%;display:block}
-a{color:var(--accent-dark)}
+a{color:var(--accent-dark);text-decoration:none}
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
 .skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:10px 16px;z-index:200}
@@ -155,15 +155,63 @@ html.js .chat-panel[hidden]{display:none}
   .brand small{font-size:12px}
   .head-call{margin-left:auto;padding:10px 14px}
   nav.main{order:3;flex-basis:100%;flex-wrap:nowrap;gap:2px}
-  nav.main a{padding:9px 6px;font-size:14.5px;white-space:nowrap}
+  /* Capture-fix 2026-11-22: 6px side padding pushed the nowrap row 4px past a
+     390px viewport (nav right edge 394) — 4px padding restores the fit. */
+  nav.main a{padding:9px 4px;font-size:14.5px;white-space:nowrap}
   table.log th:nth-child(4),table.log td:nth-child(4){display:none}
 }
-@media (max-width:370px){
-  /* The three nav links cannot share one row at 320px — wrap them deliberately,
-     centred, instead of overflowing (nowrap above is for 371–560px only). */
+@media (max-width:389px){
+  /* The three nav links cannot share one row below 390px — wrap them deliberately,
+     centred, instead of overflowing (nowrap above is for 390–560px only).
+     Capture-fix 2026-11-22: the breakpoint was 370px, but the nowrap row needs
+     the full 390 — at 375px it still overflowed by 7px. */
   nav.main{flex-wrap:wrap}
   nav.main a{flex:1 1 40%;text-align:center;white-space:normal}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
+}
+
+/* ===== PREMIUM LAYER (2026-11-22) — product-showcase treatment (Intercom Fin pattern).
+   The LIVE demo conversation is the hero module; the host page stays quiet.
+   P7: cross-document View Transitions where supported, instant navigation elsewhere. */
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.4s}
+.btn,.chip,.head-call,nav.main a{transition:background .22s ease,border-color .22s ease,color .22s ease}
+.btn:active,.chip:active{transform:translateY(1px)}
+.card,.step,.tier{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.card:hover,.step:hover,.tier:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(38,35,43,.10)}
+.host-h{font-family:var(--disp);font-size:clamp(30px,4.6vw,46px);line-height:1.12;margin:0 0 14px;font-weight:700}
+/* --- Product hero --- */
+.phero{padding:52px 0 30px;background:linear-gradient(180deg,var(--accent-soft),var(--paper) 78%)}
+.phero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:38px;align-items:start}
+.phero-grid>*,.stat-row>*{min-width:0}
+.phero-h{font-size:clamp(40px,6.2vw,68px);line-height:1.02;letter-spacing:-.02em;margin:0 0 16px}
+.phero-h em{font-style:normal;color:var(--accent-dark)}
+.phero .lede{max-width:30em}
+/* Oversized stat numerals as display type — figures the page already states, nothing new */
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0 8px}
+.stat{border-top:3px solid var(--accent);padding-top:10px}
+.stat-num{display:block;font-family:var(--disp);font-weight:700;font-size:clamp(44px,5.6vw,72px);line-height:.95;color:var(--accent-dark);letter-spacing:-.02em}
+.stat-label{display:block;font-size:13px;color:var(--muted);line-height:1.4;margin-top:5px}
+.phero-points{margin:22px 0 0;padding:0;list-style:none}
+.phero-points li{padding:11px 0 11px 30px;position:relative;border-bottom:1px dashed var(--line);font-size:16px}
+.phero-points li:last-child{border-bottom:none}
+.phero-points li::before{content:"";position:absolute;left:2px;top:18px;width:12px;height:7px;border-left:3px solid var(--accent);border-bottom:3px solid var(--accent);transform:rotate(-45deg)}
+.phero-points b{font-family:var(--disp)}
+/* --- Live demo panel: the widget's own system, set into the page as the hero module --- */
+.demo-shell{position:relative}
+.demo-panel{background:var(--card);border:1.5px solid var(--accent);border-radius:18px;box-shadow:0 22px 55px rgba(38,35,43,.22);display:flex;flex-direction:column;overflow:hidden;height:600px}
+.demo-panel .chat-msgs{height:auto}
+.demo-tag{align-self:flex-start;background:var(--ink);color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:4px 12px;margin-bottom:10px}
+.demo-static-note{font-size:13.5px;color:var(--muted);padding:10px 14px;border-top:1px solid var(--line);background:var(--card);margin:0}
+.demo-replay{align-self:flex-start;margin:0 14px 12px}
+@media (max-width:900px){
+  .phero-grid{grid-template-columns:1fr}
+  .demo-panel{height:540px}
+  .stat-row{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:560px){
+  .phero{padding:36px 0 20px}
+  .demo-panel{height:520px}
 }
