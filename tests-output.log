@@ -116,10 +116,10 @@ PASS  no lorem ipsum anywhere
 PASS  no claim of real AI ("AI model" only inside the honesty label)
 PASS  local refs all resolve
 PASS  sitemap + robots present
-PASS  code weight 50801 B < 400 KB
+PASS  code weight 51546 B < 400 KB
 PASS  assets/hero.jpg = 117551 B <= 120 KB
 PASS  assets/treatment.jpg = 114863 B <= 120 KB
 PASS  media total 232414 B <= 1.6 MB
-code total: 50801 B · media total: 232414 B
+code total: 51546 B · media total: 232414 B
 ---
 TOTAL: 122 PASS / 0 FAIL

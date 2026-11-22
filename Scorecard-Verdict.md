@@ -40,3 +40,30 @@ Reasons (defects as: what is wrong · where · what fixed looks like):
 Next step: [ ] To AICOS-025 release gate   [X] Back to Gate 5 (external evidence completions only — both prepared, neither is build work)   [ ] Back to Gate 2
 
 Disclosures: no test assertion was amended during this build (122/122 as written). Three rendered-evidence defects were found by reading captures and fixed with re-capture: the clipped chat placeholder, the inert no-JS launcher (two-step fix — the first gate attempt was defeated by the component's own base display rule and was caught only by re-reading the crop), and a keyboard-walk method gap re-run so every widget control is recorded. One internal-jargon check was run over all rendered copy (lesson 40): none found in user-facing text. The --err token is declared but intentionally unrendered (validation errors arrive as bot messages in the standard bubble treatment) — recorded in Signoff-Pack.md §3 rather than hidden.
+
+## Addendum — Round-2 Re-verification FIX RUN (2026-11-22)
+
+Independent round-2 re-verification (`Reverification-2026-11-21/round2/REPORT.md`) filed 1 minor
+defect on this site (CB-1). Addressed, re-shot and read; battery **122 PASS / 0 FAIL** unamended
+after fixes:
+
+- **CB-1 (minor) — Header at ≤768px: filed as flush-left + bulky (258px on phone).** Two
+  findings on direct measurement. (a) The flush-left half does **not** reproduce: the round-2
+  script's `firstChildLeft` measures the header's first child — the `.wrap` box itself, which
+  spans the full width on phone by construction. Measured directly, the brand wordmark sat at
+  left=20px at 768/390/320 before any change, aligned with the body content, because
+  `.site-head .wrap` sets only vertical padding and the wrap's inline padding survives. No
+  inset fix was needed or made. (b) The bulk is real and is fixed: at ≤560px the header wrap
+  tightens (gap 10px, padding-block 10px, brand 19px), the Call button shares row 1
+  (margin-left:auto), and the nav takes one compact full-width row (order 3, links 9px 6px) —
+  **header 258px → 174px at 390px**, all three links on one row, 0 overflow. At ≤370px the
+  three links cannot share a 280px row, so they wrap deliberately, centred, two rows
+  (238px at 320, was 258px) rather than overflowing — an intermediate nowrap version that
+  overflowed by 74px at 320px was caught by the geometry probe and rejected. Proof: DOM
+  geometry before/after + re-shoot 6 combos + 2 probe320, 0 problems
+  (`round2/fix2-ai-chatbot-addon/`); index-phone.png read by eye.
+
+Score unchanged: **91/100 — REJECT (evidence bar only)** — served-preview CWV + AICOS-112 §0
+sign-off still outstanding; defect repairs do not manufacture them.
+Push of the changed text files (css/style.css, Scorecard-Verdict.md, tests-output.log) is
+pending the GitHub connector's approval card — see FIX-REPORT-ROUND2.md.

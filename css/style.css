@@ -148,7 +148,21 @@ html.js .chat-panel[hidden]{display:none}
   .chat-panel{right:12px;bottom:12px;height:min(600px,calc(100dvh - 96px))}
   .chat-launcher{right:12px;bottom:12px}
   nav.main{margin-left:0}
+  /* Round-2 fix (CB-1): tighten the stacked phone header — brand + call share row 1,
+     the nav takes one compact full-width row instead of wrapping to two. */
+  .site-head .wrap{gap:10px;padding-top:10px;padding-bottom:10px}
+  .brand{font-size:19px}
+  .brand small{font-size:12px}
+  .head-call{margin-left:auto;padding:10px 14px}
+  nav.main{order:3;flex-basis:100%;flex-wrap:nowrap;gap:2px}
+  nav.main a{padding:9px 6px;font-size:14.5px;white-space:nowrap}
   table.log th:nth-child(4),table.log td:nth-child(4){display:none}
+}
+@media (max-width:370px){
+  /* The three nav links cannot share one row at 320px — wrap them deliberately,
+     centred, instead of overflowing (nowrap above is for 371–560px only). */
+  nav.main{flex-wrap:wrap}
+  nav.main a{flex:1 1 40%;text-align:center;white-space:normal}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
